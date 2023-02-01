@@ -1,3 +1,7 @@
 import { bootstrap } from './app/app.bootstrap';
 
-bootstrap().catch((err) => console.error(err));
+if (document.readyState === 'complete') {
+  bootstrap().catch((err) => console.error(err));
+} else {
+  document.addEventListener('DOMContentLoaded', bootstrap);
+}
