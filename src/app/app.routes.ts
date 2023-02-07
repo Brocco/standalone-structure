@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { EagerComponent } from './eager/eager.component';
 
-export const routes: Routes = [
+const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'eager', component: EagerComponent },
   {
@@ -11,7 +11,8 @@ export const routes: Routes = [
   },
   {
     path: 'child-routes',
-    loadChildren: () =>
-      import('./child/child-routes').then((mod) => mod.routes),
+    loadChildren: () => import('./child/child.routes'),
   },
 ];
+
+export default routes;
